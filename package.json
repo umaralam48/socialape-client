@@ -18,7 +18,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +39,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://umaralam48.github.io/socialape",
+  "homepage": "https://umaralam48.github.io/socialape-client",
   "proxy": "https://us-central1-socialape-27825.cloudfunctions.net/api"
 }
