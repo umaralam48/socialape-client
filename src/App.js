@@ -18,6 +18,7 @@ import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
 import Navbar from "./components/navbar";
+import Axios from "axios";
 
 const theme = createMuiTheme(themeFile);
 let authenticated;
@@ -30,6 +31,9 @@ if (token) {
     window.location.href = "/login";
   } else store.dispatch({ type: SET_AUTHENTICATED });
 }
+Axios.defaults.baseURL(
+  "https://us-central1-socialape-27825.cloudfunctions.net/api"
+);
 
 class App extends React.Component {
   constructor(props) {
