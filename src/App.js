@@ -11,7 +11,11 @@ import AuthRoute from "./util/AuthRoute";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { SET_AUTHENTICATED } from "./redux/types";
-import { logoutUser, getUserData } from "./redux/actions/userAction";
+import {
+  logoutUser,
+  getUserData,
+  setAuthorizationHeader
+} from "./redux/actions/userAction";
 
 //components
 import home from "./pages/home";
@@ -29,11 +33,16 @@ if (token) {
   if (decodedToken.exp * 1000 < Date.now()) {
     store.dispatch(logoutUser);
     window.location.href = "/login";
-  } else store.dispatch({ type: SET_AUTHENTICATED });
+  } else {
+    store.dispatch({ type: SET_AUTHENTICATED });
+    const tokenid = token.split("Bearer ")[1];
+    console.log(tokenid);
+    setAuthorizationHeader(tokenid);
+  }
 }
-Axios.defaults.baseURL(
-  "https://us-central1-socialape-27825.cloudfunctions.net/api"
-);
+
+Axios.defaults.baseURL =
+  "https://us-central1-socialape-27825.cloudfunctions.net/api";
 
 class App extends React.Component {
   constructor(props) {
