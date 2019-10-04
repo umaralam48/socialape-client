@@ -39,6 +39,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://umaralam48.github.io/socialape-client",
   "proxy": "https://us-central1-socialape-27825.cloudfunctions.net/api"
 }
