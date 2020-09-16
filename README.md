@@ -1,8 +1,8 @@
-## SOCIALAPE CLIENT
+## [SOCIALAPE CLIENT](https://socialape.onrender.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple social media platform where you can connect with friends and share your **screams**!
 
-## Available Scripts
+## Steps to run the project
 
 In the project directory, you can run:
 
